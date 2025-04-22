@@ -5,6 +5,7 @@ import { Card, CardContent } from "./ui/card";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Calendar, Mail, MapPin, Phone } from "lucide-react";
+import Map from "./Map";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -24,7 +25,6 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, you would handle form submission here
     alert("Thank you for contacting us. We will get back to you soon!");
     setFormData({
       name: "",
@@ -49,7 +49,6 @@ const ContactSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
             <h3 className="text-2xl font-semibold text-gray-900 mb-6">Get in Touch</h3>
-            
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <div className="bg-medical-50 p-3 rounded-full text-medical-600">
@@ -60,7 +59,6 @@ const ContactSection = () => {
                   <p className="text-gray-700">123 Medical Plaza, Bangalore, Karnataka 560001</p>
                 </div>
               </div>
-              
               <div className="flex items-start gap-4">
                 <div className="bg-medical-50 p-3 rounded-full text-medical-600">
                   <Phone size={24} />
@@ -70,7 +68,6 @@ const ContactSection = () => {
                   <p className="text-gray-700">+91 98765 43210</p>
                 </div>
               </div>
-              
               <div className="flex items-start gap-4">
                 <div className="bg-medical-50 p-3 rounded-full text-medical-600">
                   <Mail size={24} />
@@ -80,7 +77,6 @@ const ContactSection = () => {
                   <p className="text-gray-700">info@drsuryaclinic.com</p>
                 </div>
               </div>
-              
               <div className="flex items-start gap-4">
                 <div className="bg-medical-50 p-3 rounded-full text-medical-600">
                   <Calendar size={24} />
@@ -93,13 +89,13 @@ const ContactSection = () => {
                 </div>
               </div>
             </div>
+            <Map />
           </div>
 
           <div>
             <Card className="border-medical-100 shadow-lg">
               <CardContent className="pt-6">
                 <h3 className="text-2xl font-semibold text-gray-900 mb-6">Send Us a Message</h3>
-                
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
@@ -115,7 +111,6 @@ const ContactSection = () => {
                       required
                     />
                   </div>
-                  
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                       Email Address
@@ -131,7 +126,6 @@ const ContactSection = () => {
                       required
                     />
                   </div>
-                  
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
                       Phone Number
@@ -146,7 +140,6 @@ const ContactSection = () => {
                       required
                     />
                   </div>
-                  
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                       Message
@@ -161,7 +154,6 @@ const ContactSection = () => {
                       required
                     />
                   </div>
-                  
                   <Button type="submit" className="w-full bg-medical-600 hover:bg-medical-700">
                     Send Message
                   </Button>
